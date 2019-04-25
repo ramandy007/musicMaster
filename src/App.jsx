@@ -3,6 +3,10 @@ import {Form,FormControl,Button,Container, InputGroup}from 'react-bootstrap';
 import "./App.css";
 
 class App extends Component{
+    constructor(props){
+        super(props);
+        this.state={query:" "}
+    }
     render(){
         return(
             <Container >
@@ -11,7 +15,7 @@ class App extends Component{
                 <div>
                <Form>
                     <Form.Group>
-                      <InputGroup > < Form.Control type="email" placeholder ="Search for an  Artist...." />
+                      <InputGroup > < Form.Control type="text" query={this.state.query} placeholder ="Search for an  Artist...." onChange={(event)=>{this.setState({query:event.target.value})}} />
                       <InputGroup.Append>
                       <Button  variant="outline-secondary">Search</Button>  
                       </InputGroup.Append>
