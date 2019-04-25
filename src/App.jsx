@@ -7,6 +7,10 @@ class App extends Component{
         super(props);
         this.state={query:" "}
     }
+
+    search(){
+        console.log("query",this.state.query);
+    }
     render(){
         return(
             <Container >
@@ -17,12 +21,13 @@ class App extends Component{
                     <Form.Group>
                       <InputGroup > < Form.Control type="text" query={this.state.query} placeholder ="Search for an  Artist...." onChange={(event)=>{this.setState({query:event.target.value})}} />
                       <InputGroup.Append>
-                      <Button  variant="outline-secondary">Search</Button>  
+                      <Button onClick={()=>{search()}} variant="outline-secondary">Search</Button>  
                       </InputGroup.Append>
                       </InputGroup> 
                     </Form.Group>
 
                </Form>
+              
                 </div>
                 <div className="Profile">
                     <div>Artist Picture</div>
