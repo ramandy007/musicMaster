@@ -13,7 +13,7 @@ class App extends Component{
                     <Form.Group>
                       <InputGroup > < Form.Control type="email" placeholder ="Search for an  Artist...." />
                       <InputGroup.Append>
-                      <Button type="submit" variant="outline-secondary">Submit</Button>  
+                      <Button  variant="outline-secondary">Search</Button>  
                       </InputGroup.Append>
                       </InputGroup> 
                     </Form.Group>
