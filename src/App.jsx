@@ -19,7 +19,7 @@ class App extends Component{
                 <div>
                <Form>
                     <Form.Group>
-                      <InputGroup > < Form.Control type="text" query={this.state.query} placeholder ="Search for an  Artist...." onChange={(event)=>{this.setState({query:event.target.value})}} />
+                      <InputGroup > < Form.Control type="text" value={this.state.query} placeholder ="Search for an  Artist...." onChange={(event)=>{this.setState({query:event.target.value})}} />
                       <InputGroup.Append>
                       <Button onClick={()=>{this.search()}} variant="outline-secondary">Search</Button>  
                       </InputGroup.Append>
