@@ -21,19 +21,27 @@ class App extends Component{
                     <Form.Group>
                       <InputGroup > < Form.Control type="text" value={this.state.query} placeholder ="Search for an  Artist...." onChange={(event)=>{this.setState({query:event.target.value})}}
                       onKeyPress={(event)=>{console.log('event.key',event.key)}} 
-                   
-                      onSubmit={(event)=>{event.preventDefault();}}
-                      
-                       />
-                      <InputGroup.Append>
-                      <Button onClick={()=>{this.search()}}
-                      variant="outline-secondary">Search</Button>  
-                      </InputGroup.Append>
-                      </InputGroup> 
-                    </Form.Group>
+                      onKeyDown={
+                         (e) => {
+                           
+                            if (e.key === 'Enter') {
+                            e.preventDefault();
+                            this.search();
+                          
+                        
+                            }
+                        }
+                        }             
+                  
+                        />
+                        <InputGroup.Append>
+                        <Button onClick={()=>{this.search()}}
+                        variant="outline-secondary">Search</Button>  
+                        </InputGroup.Append>
+                        </InputGroup> 
+                        </Form.Group>
 
                </Form>
-              
                 </div>
                 <div className="Profile">
                     <div>Artist Picture</div>
@@ -49,3 +57,7 @@ class App extends Component{
     };
 }
  export default App;
+    
+                        
+
+              
